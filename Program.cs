@@ -26,6 +26,22 @@ namespace Players_Guide_Part_3
                     int aRandomNumber = random.Next();
                     int dieRoll = random.Next(6) + 1; //add one, because Next(6) gives us 0 to 5.
 
+                    //Try it Out - Die Rolling 
+                    //1. Ask the player for how many die rolls they want to do.
+                    //2. Create a new random object and use the Random.Next method to simulate that many dice rolls.
+                    //3. Add the total up and print the result to the user.
+                    //Bonuse: Keep loping and handle new numbers until they enter 'quit' or 'exit'
+
+                    Console.WriteLine("Hello, we're testing dice rolls.  Can you please enter how many dice you want to roll");
+                    int diceToRoll = Convert.ToInt32(Console.ReadLine());
+                    int diceTotal = 0;
+                    for (int i = 0; i < diceToRoll; i++)
+                    {
+                        diceTotal = random.Next(6) + 1 + diceTotal;
+
+                    }
+                    Console.WriteLine(diceTotal);
+
 
 
                     //All code from Chapter 17 should be before this break.
