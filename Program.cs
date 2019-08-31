@@ -24,7 +24,7 @@ namespace Players_Guide_Part_3
                     Random random = new Random();
                     //Using Randome() is calling a special type of method called a constructor.  A cosntrutor is placed in a class and describes how to create or build a new instance of that type.
                     int aRandomNumber = random.Next();
-                    int dieRoll = random.Next(6) + 1; //add one, because Next(6) gives us 0 to 5.
+                    // int dieRoll = random.Next(6) + 1; //add one, because Next(6) gives us 0 to 5.
 
                     //Try it Out - Die Rolling 
                     //1. Ask the player for how many die rolls they want to do.
@@ -37,10 +37,20 @@ namespace Players_Guide_Part_3
                     int diceTotal = 0;
                     for (int i = 0; i < diceToRoll; i++)
                     {
-                        diceTotal = random.Next(6) + 1 + diceTotal;
+                        int dieRoll = random.Next(6) + 1;
+                        diceTotal += dieRoll;
+
+                        if (i != diceToRoll - 1)
+                        {
+                            Console.Write(dieRoll + " + ");
+                        }
+                        else
+                        {
+                            Console.Write(dieRoll);
+                        }
 
                     }
-                    Console.WriteLine(diceTotal);
+                    Console.WriteLine(" = " + diceTotal);
 
 
 
