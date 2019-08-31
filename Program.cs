@@ -32,26 +32,46 @@ namespace Players_Guide_Part_3
                     //3. Add the total up and print the result to the user.
                     //Bonuse: Keep loping and handle new numbers until they enter 'quit' or 'exit'
 
-                    Console.WriteLine("Hello, we're testing dice rolls.  Can you please enter how many dice you want to roll");
-                    int diceToRoll = Convert.ToInt32(Console.ReadLine());
-                    int diceTotal = 0;
-                    for (int i = 0; i < diceToRoll; i++)
+
+                    string diceRolling = "";
+                    
+                    
+                    do
                     {
-                        int dieRoll = random.Next(6) + 1;
-                        diceTotal += dieRoll;
+                        Console.WriteLine("We're testing dice rolls.  Can you please enter how many dice you want to roll. \n If you want to stop, enter Quit or Exit.");
+                        diceRolling = Console.ReadLine();
 
-                        if (i != diceToRoll - 1)
+                        if (int.TryParse(diceRolling, out int diceToRoll))
                         {
-                            Console.Write(dieRoll + " + ");
-                        }
-                        else
-                        {
-                            Console.Write(dieRoll);
+                            //int diceToRoll = Convert.ToInt32(diceRolling);
+                            int diceTotal = 0;
+                            for (int i = 0; i < diceToRoll; i++)
+                            {
+                                int dieRoll = random.Next(6) + 1;
+                                diceTotal += dieRoll;
+
+                                if (i != diceToRoll - 1)
+                                {
+                                    Console.Write(dieRoll + " + ");
+                                }
+                                else
+                                {
+                                    Console.Write(dieRoll);
+                                }
+
+                            }
+                            Console.WriteLine(" = " + diceTotal);
                         }
 
+
+                        Console.WriteLine("Thank you for Playing");
+                        
                     }
-                    Console.WriteLine(" = " + diceTotal);
+                    while (diceRolling != "quit" && diceRolling != "exit");
 
+
+                        
+                    
 
 
                     //All code from Chapter 17 should be before this break.
