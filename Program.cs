@@ -69,12 +69,20 @@ namespace Players_Guide_Part_3
                     }
                     while (diceRolling != "quit" && diceRolling != "exit");
 
-
-                        
-                    
-
-
+                                   
                     //All code from Chapter 17 should be before this break.
+                    break;
+
+
+                case 18:
+                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine("Chapter 1: Making Your Own Classes");
+                    System.Threading.Thread.Sleep(2000);
+
+
+
+
+                    //All code from chapter 18 should be before this break.
                     break;
 
 
