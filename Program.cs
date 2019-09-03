@@ -76,9 +76,16 @@ namespace Players_Guide_Part_3
 
                 case 18:
                     System.Threading.Thread.Sleep(2000);
-                    Console.WriteLine("Chapter 1: Making Your Own Classes");
+                    Console.WriteLine("Chapter 18: Making Your Own Classes");
                     System.Threading.Thread.Sleep(2000);
-
+                    //In a Nutshell
+                    //Classes go in their own file
+                    //Anything that is a part of a class (or other type) is a member.  This inclused instance variables, methods, and constructors.
+                    //Variables can be added to a class - they are called instance variables.
+                    //You can add as many constructors to a class as you want.
+                    //You can add methods to a class which operate on the instance variables that the class has.
+                    //A private method or instance variable is only visible from inside the class.
+                    // A public method or instance variable can be seen from anywhere, inside or outside the class.
 
 
 
