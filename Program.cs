@@ -14,11 +14,68 @@ namespace Players_Guide_Part_3
                 case 17:
                     //In a nutshell: 
                     //Object oriented program is a programming style where you create chunks of code that are modeled after real world objects. 
+                    System.Threading.Thread.Sleep(2000);
+                    Console.WriteLine("Chapter 17: Object Oriented Basics");
+                    System.Threading.Thread.Sleep(2000);
+                    //Object Classes or Object Instances:
+                    //Classes: ex, a house or a car
+                    //Instance: this thouse, that house, the White House. 
+
+                    Random random = new Random();
+                    //Using Randome() is calling a special type of method called a constructor.  A cosntrutor is placed in a class and describes how to create or build a new instance of that type.
+                    int aRandomNumber = random.Next();
+                    // int dieRoll = random.Next(6) + 1; //add one, because Next(6) gives us 0 to 5.
+
+                    //Try it Out - Die Rolling 
+                    //1. Ask the player for how many die rolls they want to do.
+                    //2. Create a new random object and use the Random.Next method to simulate that many dice rolls.
+                    //3. Add the total up and print the result to the user.
+                    //Bonuse: Keep loping and handle new numbers until they enter 'quit' or 'exit'
 
 
+                    string diceRolling = "";
+                    
+                    
+                    do
+                    {
+                        Console.WriteLine("We're testing dice rolls.  Can you please enter how many dice you want to roll. \n If you want to stop, enter Quit or Exit.");
+                        diceRolling = Console.ReadLine();
 
-                //All code from Chapter 17 should be before this break.
-                break;
+                        if (int.TryParse(diceRolling, out int diceToRoll))
+                        {
+                            //int diceToRoll = Convert.ToInt32(diceRolling);
+                            int diceTotal = 0;
+                            for (int i = 0; i < diceToRoll; i++)
+                            {
+                                int dieRoll = random.Next(6) + 1;
+                                diceTotal += dieRoll;
+
+                                if (i != diceToRoll - 1)
+                                {
+                                    Console.Write(dieRoll + " + ");
+                                }
+                                else
+                                {
+                                    Console.Write(dieRoll);
+                                }
+
+                            }
+                            Console.WriteLine(" = " + diceTotal);
+                        }
+
+
+                        Console.WriteLine("Thank you for Playing");
+                        
+                    }
+                    while (diceRolling != "quit" && diceRolling != "exit");
+
+
+                        
+                    
+
+
+                    //All code from Chapter 17 should be before this break.
+                    break;
 
 
 
